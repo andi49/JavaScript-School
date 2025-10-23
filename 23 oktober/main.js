@@ -1,1 +1,2 @@
-console.log("Hello World");
+const apa = "Hello World";
+console.log(apa);
