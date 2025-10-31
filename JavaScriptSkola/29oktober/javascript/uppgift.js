@@ -99,7 +99,7 @@ const fakeh3p = document.createElement('h3')
     console.log(console.error(error));
     
  }
-}
+} 
 
 // Skapa 3 Arrayer med 10 ord i varje. Orden kommer sättas ihop till meningar. 
 // Första arrayen ska innehålla substantiv, namn eller pronomen. Alltså ‘Bordet’, ‘Bob’, ‘Jag’, ‘Han’ osv.
