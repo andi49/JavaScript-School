@@ -26,12 +26,21 @@
 
     //    console.log(i)
 
-    function fuc (num) {
-        let counter = 0
-        counter += num; 
+    // function fuc (num) {
+    //     let counter = 0
+    //     counter += num; 
 
-        console.log(counter)
+    //     console.log(counter)
+    // }
+
+    // fuc(3)
+    
+
+    const double = (x) => {
+        return x+x 
     }
 
-    fuc(3)
-    
+    console.log(double(8))
+
+const add2sum =  (x, y) => x+y
+console.log((5, 10))
