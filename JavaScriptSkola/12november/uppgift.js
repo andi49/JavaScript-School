@@ -29,10 +29,12 @@ clickMeH2.innerText = 'Du klickade på knappen'
     console.log('klickat')
 }
 
-clickMeH1.addEventListener('mouseenter', firstResponse)
+// clickMeH1.addEventListener('mouseenter', firstResponse)
 
-function firstResponse () {
-clickMeH2.innerHTML = window.alert("sometext")
-}
+// function firstResponse () {
+// clickMeH2.innerHTML = window.alert("sometext")
+// }
+
+
 
 
