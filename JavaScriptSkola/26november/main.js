@@ -32,6 +32,15 @@ function handleSubmit(event){
         .catch(handleError)
 }
 
+function displayDogImage(dogObj){
+    // console.log(dogObj);
+
+    const img = document.querySelector('#dogImage');
+    document.body.append(img);
+    img.src = dogObj.message;
+}
+
+
 function handleResponse(response){
     console.log(response);
     if(response.status >= 200 && response.status < 300){
@@ -43,14 +52,6 @@ function handleResponse(response){
     else if(!response.ok){
         throw 'Something went wrong. Please try again later.';
     }
-}
-
-function displayDogImage(dogObj){
-    // console.log(dogObj);
-
-    const img = document.querySelector('#dogImage');
-    document.body.append(img);
-    img.src = dogObj.message;
 }
 
 function handleError(error) {
