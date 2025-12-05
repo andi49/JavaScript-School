@@ -33,7 +33,3 @@ console.log(rand)
 const randomSample = _.sample(chars, [5])
 
 console.log(randomSample)
-
-
-/// Ta bort nummer från en array
-
