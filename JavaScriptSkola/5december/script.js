@@ -9,7 +9,7 @@ async function getCountries(language){
     return countries;
 }
 
-getCountries('spanish')
+getCountries('Russian')
     .then( countries =>{
         // console.log(countries)
 
@@ -31,10 +31,10 @@ getCountries('spanish')
             const lowestPopulation = _.min(countries, country => country.population);
             console.log(lowestPopulation)
 
-            const sortbyRegio = _.sortBy(countries, country => country.region)
+            const sortbyRegio = _.sortBy(countries, 'population')
             console.log(sortbyRegio)
 
-            const sortGroupBt = _.groupBy(countries, country => country.continents)
-            console.log(sortGroupBt)
+            const sortGroupCs = _.groupBy(countries, 'continents')
+            console.log(sortGroupCs)
 
     })
