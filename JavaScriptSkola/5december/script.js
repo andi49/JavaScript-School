@@ -37,4 +37,7 @@ getCountries('Russian')
             const sortGroupCs = _.groupBy(countries, 'continents')
             console.log(sortGroupCs)
 
+             const sortCountBy = _.countBy(countries, 'continents')
+            console.log(sortCountBy).true
+
     })
