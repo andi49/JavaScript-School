@@ -16,7 +16,7 @@ async function getCountries(language){
 }
 
 
-getCountries('russian')
+getCountries('spanish')
     .then( countries =>{
         console.log(countries);
 
