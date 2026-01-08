@@ -1,12 +1,14 @@
 import { Account } from "./account.js";
 import { AccountGUI } from "./accountGUI.js";
+import { Person } from "./ovning.js";
+import { Fighter } from "./ovning.js";
 
-const account = new Account('savings', 0);
+const account = new Account('savings', 1000);
 
-console.log(account.getName())
 
 account.setName('house')
 console.log(account.getName())
+console.log(account)
 
 // account.generateID(); //ger error
 
@@ -26,3 +28,10 @@ toggle.addEventListener('click', event =>{
     aGUI.toggleDarkMode();
     console.log(aGUI)
 })
+
+const userOne = new Person('Andi', 24)
+console.log(userOne.present())
+console.log(userOne)
+
+const fighter = new Fighter("Alex", 1998, 10, 2, 1)
+console.log(fighter.record())
