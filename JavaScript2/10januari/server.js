@@ -69,8 +69,6 @@ export const patchExisting = async ()=>{
 
 
 export const patchDelete = async ()=>{
-   
-
     const url = baseUrl + '/andi/array.json';
     const options = {
         method: 'DELETE',
