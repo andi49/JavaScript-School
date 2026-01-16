@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.task{
+    display: flex;
+}
+
+.hidden{
+    display: none;
+}
+
+.task p.done {
+ text-decoration: line-through;
+}
