@@ -1,10 +1,10 @@
 import { usersRef, userMessageRef, db } from "./fireDataBase.js";
-import { onValue, ref, push,update } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-database.js";
+import { onValue, ref, push,update, get } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-database.js";
 
 let dbObj = {};
-const messagesRef = ref(db, '/chatusers/messages/message');
+
 ///<!-------------------------------------------------------------------------------------------------------------------->
-onValue(usersRef,  snapShot => {
+onValue(usersRef, snapShot => {
   dbObj = snapShot.val();
    
  const selectWrapper = document.querySelector('#select')
@@ -14,10 +14,8 @@ onValue(usersRef,  snapShot => {
  
     const option = document.createElement('option');
 
-            
     ref(db, '/chatusers/users/' + key); 
    
-
     option.value = key;             
     option.innerText = dbObj[key].name;
 
@@ -25,26 +23,41 @@ onValue(usersRef,  snapShot => {
     console.log(key, dbObj[key]);    
   }
 
-selectWrapper.addEventListener('change', () => {
-   
-    const existingH1 = content.querySelector('h1');
-    if (existingH1) existingH1.remove();
+    // When a user is selected, show their name and messages
+    selectWrapper.addEventListener('change', () => {
+      const selectedKey = selectWrapper.value;
 
-    // Get selected key
-    const selectedKey = selectWrapper.value;
+      let content = document.querySelector('#content');
+      if (!content) {
+        content = document.createElement('div');
+        content.id = 'content';
+        document.body.appendChild(content);
+      }
 
-    if (messagesRef[selectedKey]) {
-        const fakeH1 = document.createElement('h1');
-        const textP = document.createElement('p')
-        fakeH1.innerText = messagesRef[selectedKey].name;
-        textP.innerText = messagesRef[selectedKey].message;
-        content.append(fakeH1, textP);
-    }
-    console.log(messagesRef[selectedKey].message)
+      content.innerHTML = '';
+
+      if (!dbObj[selectedKey]) return;
+
+      const selectedName = dbObj[selectedKey].name;
+
+      const h1 = document.createElement('h1');
+      h1.innerText = selectedName;
+      content.append(h1);
+
+      // Fetch all messages and filter by selected user name
+      const messagesRef = ref(db, '/chatusers/messages');
+      get(messagesRef).then(snapshot => {
+        const messages = snapshot.val() || {};
+        for (const msgKey in messages) {
+          if (messages[msgKey].user === selectedName) {
+            const p = document.createElement('p');
+            p.innerText = messages[msgKey].message;
+            content.append(p);
+          }
+        }
+      });
+    });
 });
-
-});
-
 ///<!-------------------------------------------------------------------------------------------------------------------->
 const form = document.querySelector('form')
 
