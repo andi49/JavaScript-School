@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+  .container {
+      width: 500px;
+      height: 400px;
+      background: white;
+      border: 4px solid black;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .content {
+      flex: 1;
+      border: 3px solid black;
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    select {
+      border: 3px solid black;
+      padding: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      flex: 1;
+      border: 3px solid black;
+      padding: 5px;
+    }
+
+    button {
+      border: 3px solid black;
+      padding: 6px 12px;
+      cursor: pointer;
+      background: white;
+      font-weight: bold;
+    }
+
+    h1 {
+        text-align: center;
+    }

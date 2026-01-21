@@ -1,5 +1,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js';
+
+import { getDatabase, ref} from "https://www.gstatic.com/firebasejs/12.8.0/firebase-database.js";
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -13,6 +17,14 @@ const firebaseConfig = {
   messagingSenderId: "1020455362189",
   appId: "1:1020455362189:web:e5af3073a3d799a97b8cc4"
 };
-
+///<!-------------------------------------------------------------------------------------------------------------------->
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+ export const app = initializeApp(firebaseConfig);
+///<!-------------------------------------------------------------------------------------------------------------------->
+/// Detta är obejkt för att see data basen
+ export const db = getDatabase(app);
+///<!-------------------------------------------------------------------------------------------------------------------->
+// För kunna intregera med Data basen
+export const usersRef = ref(db, '/users');
+///<!-------------------------------------------------------------------------------------------------------------------->
+// onValue är som en eventlisten vi lyssnar något händer i databasen! Funkar som en callback
