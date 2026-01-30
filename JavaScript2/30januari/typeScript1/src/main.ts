@@ -64,3 +64,9 @@ const coinFlip = ():Coin => {
 }
 
 console.log(coinFlip())
+
+type CoinArray = [Coin, Coin, Coin]
+
+const coins:CoinArray = [coinFlip(), coinFlip(), coinFlip()]
+
+console.log(coins)
