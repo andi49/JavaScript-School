@@ -62,3 +62,6 @@ const movieList: List<Movie> = {
   list: [{title: '', director: ''}],
   name: 'filmlista'
 }
+
+console.log(bookList, book2, movieList)
+
