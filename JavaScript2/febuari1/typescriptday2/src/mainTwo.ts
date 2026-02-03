@@ -25,3 +25,18 @@ const getProducts =  async ():Promise <Product[]> => {
 }
 
 getProducts()
+
+// const btn = document.createElement('button')
+
+// /// element selcetor i typeScript
+// const h1 = document.querySelector('h1')
+
+const knapp = document.querySelector('#knapp') as HTMLButtonElement
+
+knapp.addEventListener('click', () => {
+    console.log('klick')
+})
+
+const input = document.querySelector('input') as HTMLInputElement
+
+input.type = 'text'
