@@ -21,7 +21,17 @@ const getProducts =  async ():Promise <starWars[]> => {
     )
     console.log(product)
     return product
+}
+getProducts()
 
+const render = async () => {
+    const people = await getProducts()
+
+    people.forEach(person => {
+        const h1 = document.createElement('h1')
+        h1.innerText = person.name
+        document.body.appendChild(h1)
+    })
 }
 
-getProducts()
+render()
