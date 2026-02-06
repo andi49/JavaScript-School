@@ -13,62 +13,97 @@ const PORT = 3013;
 // hämtar alla saker som vi kan t.ex use, listen etc
 const app = express()
 
-const users =  [
+const users = [
     {
-        name: 'Andreas',
-        age: 21,
-        id: 202
+        name: 'Andi',
+        age: 23,
+        id: 68757
     },
-
     {
-        name: 'johan',
-        age: 100,
-        id: 387
-    }
-]
-
-app.use(express.json())
+        name: 'Jack',
+        age: 13,
+        id: 2678265
+    },
+];
 // <!----------------------------------------------------------------------------------------------------------------!>
-// hur man skickar request
-app.get('/', (req, res) => {
+//USE
+app.use(express.json());
+
+app.get('/', (req, res)=>{
     res.send(`
         <!DOCTYPE html>
         <html>
         <head>
-             <link rel="shortcut icon" href="img/favicon/favicon-32x32.png" type="image/x-icon">
-            <title>My first NODE.JS</title>
+            <title>Min Express App</title>
         </head>
         <body>
             <h1>Hej från Express!</h1>
             <p>GET request mottagen.</p>
         </body>
         </html>
-    `);
+    `)
 });
 // <!----------------------------------------------------------------------------------------------------------------!>
-app.post('/users',(req, res) => {
-    //Loggas i terminalen
-    console.log('Recieved post request', req.body)
+//POST
+app.post('/users', (req, res)=>{
+    console.log('post users', req.body);
 
-    /// Här generar vi nytt id dock använd ej! 
-    const newUser = {...req.body, id: Math.ceil(Math.random()*100)}
+    const newUser = {...req.body, id: Math.ceil(Math.random()*100000) };
 
-    users.push(req.body)
+    users.push(newUser);
 
-    // Skicka tillbaka ett response med JSON-svar till klienten
-    res.json({message: 'POST request received with data', 
-              newUser: newUser.id 
-            })
+    res.json({
+        message: 'POST request received',
+        newUser: newUser.id
+    } )
+});
+// <!----------------------------------------------------------------------------------------------------------------!>
+//GET
+app.get('/users', (req, res)=>{
+
+    console.log('get users', req.query);
+
+    if(req.query.field){
+        const fieldArr = users.map(user => user[req.query.field])
+        res.json(fieldArr)
+    } else {
+        res.json(users)
+    }
+
+    res.json(users);
+});
+
+// Hämta en specific användare med dess id
+app.get('/users/:id', (req, res)=>{
+    console.log(req.params)
+
+    const user = users.find( user => user.id == req.params.id);
+    if(user) res.json(user)
+    else{
+        res.status(404);
+        res.json({message: 'no user found'})
+    }
+})
+// <!----------------------------------------------------------------------------------------------------------------!>
+//PATCH
+app.patch('/users/:id', (req, res)=>{
+    console.log('patch', req.params, req.body );
+
+    // Returnerar inte en klon vilket betyder att ändrar vi på user ändras det objektet i arrayen users
+    const user = users.find( user => user.id == req.params.id);
+
+    if(user){
+        user.name = req.body.name;
+        res.json(user);
+    }
+    else{
+        res.status(404);
+        res.json({message: 'no user found'})
+    }
 })
 // <!----------------------------------------------------------------------------------------------------------------!>
 
-app.get('/users', (req, res) =>{
-    console.log('get users')
-    res.json(users)
-})
-// <!----------------------------------------------------------------------------------------------------------------!>
-// Öppnar porten
-app.listen(PORT, () => {
-    console.log('Im listening to port', PORT)
+app.listen(PORT, ()=>{
+    console.log('Listening on port ', PORT)
 })
 // <!----------------------------------------------------------------------------------------------------------------!>
