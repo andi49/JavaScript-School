@@ -1,0 +1,17 @@
+{
+  "name": "febauri5",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch ./main.js"
+  },
+  "keywords": [],
+  "author": "Andreas",
+  "license": "ISC",
+  "type": "module",
+  "description": "My first test with NODE.JS",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
