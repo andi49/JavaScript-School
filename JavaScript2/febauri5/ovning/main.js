@@ -11,22 +11,26 @@ const users = [
 {
    name: 'Andi',
    age: 23,
-   admin: true
+   admin: true,
+   id: 10
 }, 
 {
     name: 'Jack',
     age: 89,
-    admin: false
+    admin: false,
+    id: 20
 },
 {
     name: 'Dani',
     age: 65,
-    admin: false
+    admin: false,
+    id: 30
 },
 {
     name: 'Chad',
     age: 34,
-    admin: true
+    admin: true,
+    id: 40
 }
 
 ]
@@ -35,7 +39,10 @@ const users = [
 //USE
 app.use(express.json());
 
-app.get('/', (req, response)=>{
+app.get('/', (req, response) => {
+   
+    const userListItems = users.map(users => `<li>${users.name} ${users.id}</li>`).join('');
+    const numberListItems = numbers.map(number =>  `<li>${number}</li>`).join('')
     response.send(`
         <!DOCTYPE html>
         <html>
@@ -45,9 +52,19 @@ app.get('/', (req, response)=>{
         <body>
             <h1>Hej från Express!</h1>
             <p>GET request mottagen.</p>
+
+            <h2>Användare:</h2>
+            <ul>
+                ${userListItems}
+            </ul>
+
+               <h2>Nummer:</h2>
+            <ul>
+                ${numberListItems}
+            </ul>
         </body>
         </html>
-    `)
+    `);
 });
 // <!----------------------------------------------------------------------------------------------------------------!>
 /// 
@@ -72,8 +89,8 @@ app.post('/numbers', (req, response) => {
     numbers.push(newNumber)
 
     response.json({
-        message: 'POST number added',  numbers: numbers, //här får du nya array med numbers
-        message: `Number ${newNumber} been added` // här får bara själva numern
+        message: 'POST number added',  numbers: numbers, 
+        message: `Number ${newNumber} been added`
     })
 })
 
@@ -130,19 +147,17 @@ app.delete('/numbers/4', (req, response) => {
 })
 
 
-app.delete('/users/1', (req, response) => {
+app.delete('/users/3', (req, response) => {
     console.log('delete', req.body)
 
-    const oldUser = users[1]
+    const oldUser = users[3]
    
-    users.splice(1,1)
+    users.splice(3,1)
      response.json({
         message: `DELETE request received ${oldUser.name}`
     })
 })
 // <!----------------------------------------------------------------------------------------------------------------!>
-
-
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
