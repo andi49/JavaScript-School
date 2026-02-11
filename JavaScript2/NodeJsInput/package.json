@@ -1,0 +1,9 @@
+{
+  "name": "node-json-app",
+  "version": "1.0.0",
+  "description": "Simple Node JSON storage app",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
