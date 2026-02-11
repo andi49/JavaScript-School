@@ -37,7 +37,7 @@ const users = [
 
 // <!----------------------------------------------------------------------------------------------------------------!>
 //USE
-app.use(express.json());
+app.use(express.json()); /// middleware för att kunna använda json
 
 app.get('/', (req, response) => {
    

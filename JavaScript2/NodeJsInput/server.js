@@ -38,3 +38,7 @@ app.get("/data", (req, res) => {
     const fileData = fs.readFileSync(dataPath);
     res.json(JSON.parse(fileData));
 });
+
+app.listen(PORT, ()=>{
+    console.log('Listening on port ', PORT)
+})
