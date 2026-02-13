@@ -61,28 +61,17 @@
     "id": "34e8e277-34e1-43c8-a6c0-2fe9d605e65e"
   },
   {
-    "id": "50347789-ddb2-4f9d-8294-0799325c0cea",
-    "name": "The Grand Illusion",
-    "director": "Jr",
-    "year": 1937
+    "name": "The Grand Race",
+    "director": "Jean jag",
+    "year": 2019,
+    "rating": 12,
+    "id": "b39a51aa-9118-4736-a288-33d2beda13e3"
   },
   {
-    "name": "The Grand Illusion",
-    "director": "Jean Renoir",
-    "year": 1937,
-    "id": "540a413a-ce94-4959-b640-e24cde774729"
-  },
-  {
-    "name": "The Grand hjkfg",
-    "director": "Jean Renoir",
-    "year": 123,
-    "id": "3dc055c0-f52c-43f3-a737-659daa12de1f"
-  },
-  {
-    "name": "The Grand King",
-    "director": "Jean Renoir",
-    "year": 123,
-    "rating": 45,
-    "id": "d20198e8-31d9-4c6b-bd47-7e9c45ab220a"
+    "name": "The Grand Race",
+    "director": "Jean jag",
+    "year": 2019,
+    "rating": 12,
+    "id": "76886519-050a-4feb-b608-68062ca77750"
   }
 ]

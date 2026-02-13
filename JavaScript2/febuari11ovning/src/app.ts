@@ -2,13 +2,7 @@ import express from 'express';
 import { getAllSongs } from "./fileSystemOperation";
 
 
-interface Song {
-    id: number,
-    name: string,
-    artist: string,
-    composer: string,
-    year: number
-}
+
 
 export const app = express();
 
