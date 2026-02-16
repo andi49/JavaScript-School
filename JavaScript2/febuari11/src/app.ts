@@ -1,11 +1,11 @@
 import express from 'express';
 import { getMovies, addMovie, getMovieByID, deleteMovieByID, updateMovieRating } from './fileoperation';
 import { isNewMovie } from './types';
-
+import cors from "cors";
 
 export const app = express();
 app.use(express.json());
-
+app.use(cors());
 app.get('/movies', async (req, res) => {
 
     console.log('Queries:', req.query)
