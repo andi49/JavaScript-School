@@ -19,6 +19,7 @@ const getMovies = async ():Promise<Movie[]>=>{
     try{
         const res = await fetch(url);
         const movies:Movie[] = await res.json();
+        console.log(movies)
         return movies;
     }
     catch(error){

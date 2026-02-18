@@ -7,9 +7,9 @@ exports.app = void 0;
 const express_1 = __importDefault(require("express"));
 const fileoperation_1 = require("./fileoperation");
 const types_1 = require("./types");
+const cors_1 = __importDefault(require("cors"));
 exports.app = (0, express_1.default)();
 exports.app.use(express_1.default.json());
-const cors_1 = __importDefault(require("cors"));
 exports.app.use((0, cors_1.default)());
 exports.app.get('/movies', async (req, res) => {
     console.log('Queries:', req.query);

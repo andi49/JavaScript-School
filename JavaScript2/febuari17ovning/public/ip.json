@@ -1,0 +1,129 @@
+[
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:39:35.220Z"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:39:47.590Z"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:39:52.972Z"
+  },
+  {
+    "ip": "::1",
+    "method": "POST",
+    "timestamp": "2026-02-17T14:39:56.488Z"
+  },
+  null,
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:39:59.050Z"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:39:59.052Z"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:48:01.798Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:51.395Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:52.107Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:52.110Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:52.706Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:52.711Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:53.472Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:53.476Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:56.938Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "POST",
+    "timestamp": "2026-02-17T14:56:58.079Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:59.112Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:59.116Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:59.885Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:56:59.887Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:57:00.465Z",
+    "typeBrowser": "Node.js/22"
+  },
+  {
+    "ip": "::1",
+    "method": "GET",
+    "timestamp": "2026-02-17T14:57:00.469Z",
+    "typeBrowser": "Node.js/22"
+  }
+]
