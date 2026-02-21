@@ -57,6 +57,23 @@ const getMovieByID = async (id: string) => {
     }
 }
 
+const updateMovieRating = async (id: string, rating: number) => {
+    try{
+        const movies = await getMovies();
+        const index = movies.findIndex((movie: any) => movie.id === id);
+    
+        if (index === -1) return;
+        else {
+            movies[index].rating = rating;
+            await writeMovies(movies);
+            return movies[index];
+        }
+    }
+    catch (error) {
+        throw error;
+    }
+}
+
 const deleteMovieByID = async (id: string) => {
     try{
         const movies = await getMovies();
@@ -71,23 +88,6 @@ const deleteMovieByID = async (id: string) => {
         }
     }
         catch (error) {
-        throw error;
-    }
-}
-
-const updateMovieRating = async (id: string, rating: number) => {
-    try{
-        const movies = await getMovies();
-        const index = movies.findIndex((movie: any) => movie.id === id);
-    
-        if (index === -1) return;
-        else {
-            movies[index].rating = rating;
-            await writeMovies(movies);
-            return movies[index];
-        }
-    }
-    catch (error) {
         throw error;
     }
 }

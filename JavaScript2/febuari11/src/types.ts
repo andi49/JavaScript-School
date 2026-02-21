@@ -19,10 +19,4 @@ export const isNewMovie = (obj: any) =>{
         typeof obj.director === 'string' &&
         typeof obj.year === 'number' &&
         (obj.rating === null || typeof obj.rating === 'number'  )) 
-}   
-
-// export const hasID = (obj: any) =>{
-//     return ( typeof obj === 'object' &&
-//         typeof obj.id === 'string'
-//     )
-// }
+}
